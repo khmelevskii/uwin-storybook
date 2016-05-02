@@ -1,0 +1,120 @@
+$scale1: 8px;
+$scale2: 16px;
+$scale3: 24px;
+$scale4: 32px;
+$scale5: 40px;
+
+.base {
+  box-sizing: border-box;
+  clear: fix;
+}
+
+.pull_left {
+  float: left;
+}
+
+.pull_right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.m0 { margin: 0; }
+.m1 { margin: $scale1; }
+.m2 { margin: $scale2; }
+.m3 { margin: $scale3; }
+.m4 { margin: $scale4; }
+.m5 { margin: $scale5; }
+
+.mt0 { margin-top: 0; }
+.mt1 { margin-top: $scale1; }
+.mt2 { margin-top: $scale2; }
+.mt3 { margin-top: $scale3; }
+.mt4 { margin-top: $scale4; }
+.mt5 { margin-top: $scale5; }
+
+.mr0 { margin-right: 0; }
+.mr1 { margin-right: $scale1; }
+.mr2 { margin-right: $scale2; }
+.mr3 { margin-right: $scale3; }
+.mr4 { margin-right: $scale4; }
+.mr5 { margin-right: $scale5; }
+
+.mb0 { margin-bottom: 0; }
+.mb1 { margin-bottom: $scale1; }
+.mb2 { margin-bottom: $scale2; }
+.mb3 { margin-bottom: $scale3; }
+.mb4 { margin-bottom: $scale4; }
+.mb5 { margin-bottom: $scale5; }
+
+.ml0 { margin-left: 0; }
+.ml1 { margin-left: $scale1; }
+.ml2 { margin-left: $scale2; }
+.ml3 { margin-left: $scale3; }
+.ml4 { margin-left: $scale4; }
+.ml5 { margin-left: $scale5; }
+
+.mx0 { margin-left: 0; margin-right: 0; }
+.mx1 { margin-left: $scale1; margin-right: $scale1; }
+.mx2 { margin-left: $scale2; margin-right: $scale2; }
+.mx3 { margin-left: $scale3; margin-right: $scale3; }
+.mx4 { margin-left: $scale4; margin-right: $scale4; }
+.mx5 { margin-left: $scale5; margin-right: $scale5; }
+
+.my0 { margin-top: 0; margin-bottom: 0; }
+.my1 { margin-top: $scale1; margin-bottom: $scale1; }
+.my2 { margin-top: $scale2; margin-bottom: $scale2; }
+.my3 { margin-top: $scale3; margin-bottom: $scale3; }
+.my4 { margin-top: $scale4; margin-bottom: $scale4; }
+.my5 { margin-top: $scale5; margin-bottom: $scale5; }
+
+.p0 { padding: 0; }
+.p1 { padding: $scale1; }
+.p2 { padding: $scale2; }
+.p3 { padding: $scale3; }
+.p4 { padding: $scale4; }
+.p5 { padding: $scale5; }
+
+.pt0 { padding-top: 0; }
+.pt1 { padding-top: $scale1; }
+.pt2 { padding-top: $scale2; }
+.pt3 { padding-top: $scale3; }
+.pt4 { padding-top: $scale4; }
+.pt5 { padding-top: $scale5; }
+
+.pr0 { padding-right: 0; }
+.pr1 { padding-right: $scale1; }
+.pr2 { padding-right: $scale2; }
+.pr3 { padding-right: $scale3; }
+.pr4 { padding-right: $scale4; }
+.pr5 { padding-right: $scale5; }
+
+.pb0 { padding-bottom: 0; }
+.pb1 { padding-bottom: $scale1; }
+.pb2 { padding-bottom: $scale2; }
+.pb3 { padding-bottom: $scale3; }
+.pb4 { padding-bottom: $scale4; }
+.pb5 { padding-bottom: $scale5; }
+
+.pl0 { padding-left: 0; }
+.pl1 { padding-left: $scale1; }
+.pl2 { padding-left: $scale2; }
+.pl3 { padding-left: $scale3; }
+.pl4 { padding-left: $scale4; }
+.pl5 { padding-left: $scale5; }
+
+.px0 { padding-left: 0; padding-right: 0; }
+.px1 { padding-left: $scale1; padding-right: $scale1; }
+.px2 { padding-left: $scale2; padding-right: $scale2; }
+.px3 { padding-left: $scale3; padding-right: $scale3; }
+.px4 { padding-left: $scale4; padding-right: $scale4; }
+.px5 { padding-left: $scale5; padding-right: $scale5; }
+
+.py0 { padding-top: 0; padding-bottom: 0; }
+.py1 { padding-top: $scale1; padding-bottom: $scale1; }
+.py2 { padding-top: $scale2; padding-bottom: $scale2; }
+.py3 { padding-top: $scale3; padding-bottom: $scale3; }
+.py4 { padding-top: $scale4; padding-bottom: $scale4; }
+.py5 { padding-top: $scale5; padding-bottom: $scale5; }
