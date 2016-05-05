@@ -96,7 +96,7 @@ describe('<Base />', () => {
       <Base exists={false} />
     ).find(Base);
 
-    expect(wrapper.html()).to.be.null;
+    expect(wrapper.html()).to.be.equal(null);
   }); // }}}
 
   it('should render <button> with className=foo, paddings, margins, float and clear', () => { // {{{
