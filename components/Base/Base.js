@@ -3,6 +3,9 @@ import compose from 'recompose/compose';
 import defaultProps from 'recompose/defaultProps';
 import mapPropsOnChange from 'recompose/mapPropsOnChange';
 import pure from 'recompose/pure';
+import branch from 'recompose/branch';
+import renderComponent from 'recompose/renderComponent';
+import renderNothing from 'recompose/renderNothing';
 import classNames from 'classnames/bind';
 import css from './Base.scss';
 
@@ -37,6 +40,9 @@ base.propTypes = { // {{{
     element,
     func,
   ]),
+
+  // Render component or not
+  exists: bool,
 
   // Css classes for element
   cssClasses: object,
@@ -89,6 +95,7 @@ base.propTypes = { // {{{
 
 export const baseHOC = compose( // {{{
   defaultProps({ // {{{
+    exists: true,
     component: 'div',
     cssClasses: css,
     className: '',
@@ -137,7 +144,13 @@ export const baseHOC = compose( // {{{
     },
   ), // }}}
 
+  branch( // {{{
+    ({ exists }) => exists,
+    renderComponent(base),
+    renderComponent(() => null),
+  ), // }}}
+
   pure,
 ); // }}}
 
-export default baseHOC(base);
+export default baseHOC(renderNothing());
