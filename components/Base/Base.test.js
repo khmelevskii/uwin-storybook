@@ -82,13 +82,21 @@ describe('<Base />', () => {
     expect(wrapper).to.have.className(scss.clear);
   }); // }}}
 
-  it('should render custom attributes', () => { // {{{
+  it('should render with custom attributes', () => { // {{{
     const wrapper = mount(
       <Base component="button" title="Title" />
     ).find(Base);
 
     expect(wrapper).to.have.tagName('button')
       .and.have.attr('title', 'Title');
+  }); // }}}
+
+  it('should not render', () => { // {{{
+    const wrapper = mount(
+      <Base exists={false} />
+    ).find(Base);
+
+    expect(wrapper.html()).to.be.null;
   }); // }}}
 
   it('should render <button> with className=foo, paddings, margins, float and clear', () => { // {{{
