@@ -62,6 +62,9 @@ base.propTypes = { // {{{
   // Clear: both
   clear: bool,
 
+  // Clear: fix
+  clearfix: bool,
+
   // Margin based on spacing scale
   m: oneOf([0, 1, 2, 3, 4, 5]),
   // Margin top based on spacing scale
@@ -100,16 +103,17 @@ export const baseHOC = compose( // {{{
     cssClasses: css,
     className: '',
     clear: false,
+    clearfix: false,
   }), // }}}
 
   mapPropsOnChange( // {{{
     [
-      'cssClasses', 'className', 'pull', 'clear',
+      'cssClasses', 'className', 'pull', 'clear', 'clearfix',
       'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
       'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
     ],
     ({
-      cssClasses, className, pull, clear,
+      cssClasses, className, pull, clear, clearfix,
       m, mt, mr, mb, ml, mx, my,
       p, pt, pr, pb, pl, px, py,
     }) => {
@@ -136,6 +140,7 @@ export const baseHOC = compose( // {{{
           [`py${py}`]: py >= 0,
 
           clear,
+          clearfix,
           [`pull_${pull}`]: !!pull,
 
           [className]: !!className,

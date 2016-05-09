@@ -6,7 +6,6 @@ $scale5: 40px;
 
 .base {
   box-sizing: border-box;
-  clear: fix;
 }
 
 .pull_left {
@@ -19,6 +18,10 @@ $scale5: 40px;
 
 .clear {
   clear: both;
+}
+
+.clearfix {
+  clear: fix;
 }
 
 .m0 { margin: 0; }

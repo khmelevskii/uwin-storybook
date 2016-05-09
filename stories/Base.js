@@ -25,6 +25,13 @@ storiesOf('Base container', module)
     </div>
   )) // }}}
 
+  .add('clearfix', () => ( // {{{
+    <Base clearfix style={{ border: '1px solid', width: 300 }}>
+      <Base style={{ lineHeight: '50px', background: '#cc0' }} pull="left">Left element</Base>
+      <Base style={{ lineHeight: '100px', background: '#7c7' }} pull="right">Right element</Base>
+    </Base>
+  )) // }}}
+
   .add('tag element <strong>', () => ( // {{{
     <Base component="strong">Base container</Base>
   )) // }}}

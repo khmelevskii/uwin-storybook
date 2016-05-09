@@ -82,6 +82,14 @@ describe('<Base />', () => {
     expect(wrapper).to.have.className(scss.clear);
   }); // }}}
 
+  it('should render with clearfix', () => { // {{{
+    const wrapper = mount(
+      <Base clearfix />
+    ).find(Base);
+
+    expect(wrapper).to.have.className(scss.clearfix);
+  }); // }}}
+
   it('should render with custom attributes', () => { // {{{
     const wrapper = mount(
       <Base component="button" title="Title" />
