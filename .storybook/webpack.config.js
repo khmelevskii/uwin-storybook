@@ -68,17 +68,25 @@ reactTransform[1].transforms.push({
   locals: ['module']
 });
 
+console.log(path.resolve(__dirname, '..'));
 module.exports = {
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel?' + JSON.stringify(babelLoaderQuery), 'eslint-loader']},
+      { test: /\.js$/, exclude: /node_modules/, include: [path.resolve(__dirname, '..')], loaders: ['babel?' + JSON.stringify(babelLoaderQuery), 'eslint-loader']},
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.scss$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[name]_[local]_[hash:base64:3]!postcss' },
+      { test: /\.sass$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[name]_[local]_[hash:base64:5]!postcss!sass?precision=10&indentedSyntax=sass' },
+      { test: /\.scss$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[name]_[local]_[hash:base64:5]!postcss' },
+      { test: /\.css$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[name]_[local]_[hash:base64:5]!postcss' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
     ]
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    root: path.resolve(__dirname, '..'),
   },
 
   plugins: [
