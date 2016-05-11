@@ -1,0 +1,9 @@
+@import 'html-hint/dist/html-hint.css';
+
+.main {
+  composes: hint--html;
+}
+
+.tooltip {
+  composes: hint__content;
+}
