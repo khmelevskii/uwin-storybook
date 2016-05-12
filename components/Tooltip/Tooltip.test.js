@@ -3,7 +3,7 @@ import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 import { mount } from 'enzyme';
 import Tooltip from './Tooltip';
-import Button from 'Button';
+import { Link } from 'react-router';
 import scss from 'hint/Hint.scss';
 
 chai.use(chaiEnzyme());
@@ -31,9 +31,9 @@ describe('<Tooltip />', () => {
 
   it('should render as a specified Component', () => { // {{{
     const wrapper = mount(
-      <Tooltip component={Button} hint="test" />
-    ).find(Button);
+    <Tooltip component={Link} to="/test" hint="test" />
+    ).find(Link);
 
-    expect(wrapper.type()).to.be.equal(Button);
+    expect(wrapper.type()).to.be.equal(Link);
   }); // }}}
 });
