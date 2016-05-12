@@ -1,0 +1,49 @@
+@import 'variables.css';
+
+.space {
+  box-sizing: border-box;
+}
+
+span.space {
+  display: inline-block;
+}
+
+.x1 {
+  width: $scale1;
+}
+
+.x2 {
+  width: $scale2;
+}
+
+.x3 {
+  width: $scale3;
+}
+
+.x4 {
+  width: $scale4;
+}
+
+.x5 {
+  width: $scale5;
+}
+
+.y1 {
+  height: $scale1;
+}
+
+.y2 {
+  height: $scale2;
+}
+
+.y3 {
+  height: $scale3;
+}
+
+.y4 {
+  height: $scale4;
+}
+
+.y5 {
+  height: $scale5;
+}

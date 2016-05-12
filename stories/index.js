@@ -1,5 +1,6 @@
 import './Base';
 import './Tooltip';
+import './Space';
 // import './Button';
 // import './Appbar';
 // import './Box';
@@ -7,5 +8,4 @@ import './Tooltip';
 // import './Icon';
 // import './Image';
 // import './Placeholder';
-// import './Space';
 // import './Userbar';
