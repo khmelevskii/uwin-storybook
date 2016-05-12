@@ -14,11 +14,11 @@ describe('<Tooltip />', () => {
       <Tooltip hint="test">content</Tooltip>
     ).find(Tooltip);
 
-    const [ mainClassName, htmlHintClassName ] = scss.main.split(' ');
+    const [mainClassName, htmlHintClassName] = scss.main.split(' ');
 
     expect(wrapper).to.have.tagName('span')
       .and.to.have.className(mainClassName)
-      .and.to.have.className(htmlHintClassName)
+      .and.to.have.className(htmlHintClassName);
   }); // }}}
 
   it('should render as a specified HTML element', () => { // {{{
