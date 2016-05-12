@@ -3,7 +3,7 @@ import compose from 'recompose/compose';
 import defaultProps from 'recompose/defaultProps';
 import setPropTypes from 'recompose/setPropTypes';
 import renameProps from 'recompose/renameProps';
-import mapPropsOnChange from 'recompose/mapPropsOnChange';
+import withPropsOnChange from 'recompose/withPropsOnChange';
 import classNames from 'classnames/bind';
 import css from './Hint.scss';
 
@@ -75,7 +75,7 @@ export const hintHOC = compose( // {{{
     hidden: false,
   }), // }}}
 
-  mapPropsOnChange( // {{{
+  withPropsOnChange( // {{{
     [
       'className', 'hintClassName', 'cssClasses', 'hoverable', 'always', 'hidden',
       'position', 'accent', 'hintStyle', 'children', 'hint',

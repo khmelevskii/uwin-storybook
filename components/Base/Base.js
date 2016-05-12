@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import compose from 'recompose/compose';
 import defaultProps from 'recompose/defaultProps';
-import mapPropsOnChange from 'recompose/mapPropsOnChange';
+import withPropsOnChange from 'recompose/withPropsOnChange';
 import pure from 'recompose/pure';
 import branch from 'recompose/branch';
 import renderComponent from 'recompose/renderComponent';
@@ -106,7 +106,7 @@ export const baseHOC = compose( // {{{
     clearfix: false,
   }), // }}}
 
-  mapPropsOnChange( // {{{
+  withPropsOnChange( // {{{
     [
       'cssClasses', 'className', 'pull', 'clear', 'clearfix',
       'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
