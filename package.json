@@ -4,7 +4,7 @@
   "description": "Collection of react components",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint -c .eslintrc components",
+    "lint": "eslint -c .eslintrc components HOCs stories",
     "start": "start-storybook -p 9001",
     "test": "karma start"
   },

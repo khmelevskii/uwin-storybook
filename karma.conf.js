@@ -43,7 +43,7 @@ module.exports = function (config) {
       module: {
         loaders: [
           { test: /\.(jpe?g|png|gif|svg)$/, loader: 'url', query: {limit: 10240} },
-          { test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+          { test: /\.js$/, exclude: /node_modules/, loaders: ['babel', 'eslint-loader']},
           { test: /\.sass$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[name]_[local]_[hash:base64:5]!postcss!sass?precision=10&indentedSyntax=sass' },
           { test: /\.scss$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[name]_[local]_[hash:base64:5]!postcss' },
           { test: /\.css$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[name]_[local]_[hash:base64:5]!postcss' },
