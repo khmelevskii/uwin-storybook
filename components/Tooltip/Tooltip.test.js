@@ -31,7 +31,7 @@ describe('<Tooltip />', () => {
 
   it('should render as a specified Component', () => { // {{{
     const wrapper = mount(
-    <Tooltip component={Link} to="/test" hint="test" />
+      <Tooltip component={Link} to="/test" hint="test" />
     ).find(Link);
 
     expect(wrapper.type()).to.be.equal(Link);

@@ -21,7 +21,7 @@ describe('<Hint />', () => {
       <WrapperComponent hint="test">content</WrapperComponent>
     ).find(WrapperComponent);
 
-    const [ mainClassName, htmlHintClassName ] = scss.main.split(' ');
+    const [mainClassName, htmlHintClassName] = scss.main.split(' ');
 
     expect(wrapper).to.have.className(mainClassName)
       .and.to.have.className(htmlHintClassName)
@@ -141,8 +141,8 @@ describe('<Hint />', () => {
 
   it('should render with specified style', () => { // {{{
     const wrapper = mount(
-      <WrapperComponent hint="test" style={{ fontSize: 20 }}
-        hintStyle={{ fontSize: 30 }}
+      <WrapperComponent
+        hint="test" style={{ fontSize: 20 }} hintStyle={{ fontSize: 30 }}
       />
     ).find(WrapperComponent);
 
@@ -161,12 +161,13 @@ describe('<Hint />', () => {
 
   it('should render with html content', () => { // {{{
     const wrapper = mount(
-      <WrapperComponent hint={
-        <span>
-          <strong>Header</strong>
-          <p>my tooltip with murkup</p>
-          <a href="/test">test link</a>
-        </span>
+      <WrapperComponent
+        hint={
+          <span>
+            <strong>Header</strong>
+            <p>my tooltip with murkup</p>
+            <a href="/test">test link</a>
+          </span>
         }
       />
     ).find(WrapperComponent);
