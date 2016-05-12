@@ -53,6 +53,7 @@ module.exports = function (config) {
       resolve: {
         modulesDirectories: [
           '.',
+          'HOCs',
           'components',
           'node_modules'
         ],
