@@ -4,7 +4,7 @@ import { storiesOf } from '@kadira/storybook';
 import Tooltip from '../components/Tooltip';
 import Button from '../components/Button';
 
-storiesOf('Tooltip component', module)
+storiesOf('Tooltip', module)
   .add('default view', () => ( // {{{
     <Tooltip hint="test">content</Tooltip>
   )) // }}}

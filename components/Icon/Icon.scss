@@ -1,0 +1,41 @@
+@import 'variables.css';
+
+.icon {
+  fill: $base-icon-color;
+
+  &_invert {
+    fill: $base-invert-icon-color;
+  }
+}
+
+.size {
+  &_xs {
+    width: $scale2;
+    height: $scale2;
+  }
+
+  &_s {
+    width: calc($scale2 * 1.25);
+    height: calc($scale2 * 1.25);
+  }
+
+  &_m {
+    width: calc($scale2 * 1.5);
+    height: calc($scale2 * 1.5);
+  }
+
+  &_l {
+    width: calc($scale3 * 1.25);
+    height: calc($scale3 * 1.25);
+  }
+
+  &_xl {
+    width: calc($scale4 * 1.1);
+    height: calc($scale4 * 1.1);
+  }
+
+  &_xxl {
+    width: $scale5;
+    height: $scale5;
+  }
+}

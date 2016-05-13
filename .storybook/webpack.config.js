@@ -68,7 +68,6 @@ reactTransform[1].transforms.push({
   locals: ['module']
 });
 
-console.log(path.resolve(__dirname, '..'));
 module.exports = {
   module: {
     loaders: [
@@ -89,10 +88,20 @@ module.exports = {
     root: path.resolve(__dirname, '..'),
   },
 
+  progress: true,
+
   plugins: [
-    new SvgStore(path.join(staticPath, 'svg', '*.svg'), '', {
+    new SvgStore([
+      path.join(staticPath, 'icons', '**', '*.svg'),
+      path.join(
+        path.resolve(__dirname, '..'), 'node_modules', 'material-design-icons',
+        '*', 'svg', 'production', '*48px.svg'
+      ),
+    ],
+    '',
+    {
       name: '[hash].svg',
-      chunk: 'main',
+      chunk: 'preview',
       prefix: 'icon-',
       svgoOptions: {
         plugins: [

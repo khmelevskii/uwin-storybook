@@ -49,7 +49,7 @@
     "sass-loader": "^3.2.0",
     "strip-loader": "^0.1.0",
     "style-loader": "^0.13.0",
-    "webpack-svgstore-plugin": "https://github.com/khmelevskii/webpack-svgstore-plugin.git#e467ad0dfb43e67a31301c87526be170f874045d"
+    "webpack-svgstore-plugin": "^2.2.0"
   },
   "dependencies": {
     "babel-core": "^6.7.6",
@@ -67,6 +67,7 @@
     "classnames": "^2.2.3",
     "file-loader": "^0.8.5",
     "html-hint": "^0.2.4",
+    "material-design-icons": "^2.2.3",
     "normalize.css": "^4.0.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
