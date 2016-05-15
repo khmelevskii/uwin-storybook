@@ -1,0 +1,229 @@
+@import 'variables.scss';
+
+.loader {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.path {
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+}
+
+.size {
+  &_xs {
+    width: 14px;
+    height: 14px;
+
+    .path {
+      stroke-width: 2;
+      animation: dash_xs 1.5s ease-in-out infinite;
+
+      &_colorized {
+        animation: dash_xs 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      }
+    }
+  }
+
+  &_s {
+    width: 18px;
+    height: 18px;
+
+    .path {
+      stroke-width: 2;
+      animation: dash_s 1.5s ease-in-out infinite;
+
+      &_colorized {
+        animation: dash_s 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      }
+    }
+  }
+
+  &_m {
+    width: 22px;
+    height: 22px;
+
+    .path {
+      stroke-width: 3;
+      animation: dash_m 1.5s ease-in-out infinite;
+
+      &_colorized {
+        animation: dash_m 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      }
+    }
+  }
+
+  &_l {
+    width: 28px;
+    height: 28px;
+
+    .path {
+      stroke-width: 4;
+      animation: dash_l 1.5s ease-in-out infinite;
+
+      &_colorized {
+        animation: dash_l 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      }
+    }
+  }
+
+  &_xl {
+    width: 36px;
+    height: 36px;
+
+    .path {
+      stroke-width: 4;
+      animation: dash_xl 1.5s ease-in-out infinite;
+
+      &_colorized {
+        animation: dash_xl 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      }
+    }
+  }
+
+  &_xxl {
+    width: 36px;
+    height: 36px;
+
+    .path {
+      stroke-width: 4;
+      animation: dash_xl 1.5s ease-in-out infinite;
+
+      &_colorized {
+        animation: dash_xl 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+.accent {
+  &_default {
+    stroke: $default-color;
+  }
+
+  &_primary {
+    stroke: $primary-color;
+  }
+
+  &_success {
+    stroke: $success-color;
+  }
+
+  &_info {
+    stroke: $info-color;
+  }
+
+  &_warning {
+    stroke: $warning-color;
+  }
+
+  &_danger {
+    stroke: $danger-color;
+  }
+}
+
+@keyframes dash_xs {
+  0%   {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%  {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -33;
+  }
+}
+
+@keyframes dash_s {
+  0%   {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%  {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -45;
+  }
+}
+
+@keyframes dash_m {
+  0%   {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%  {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -55;
+  }
+}
+
+@keyframes dash_l {
+  0%   {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%  {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -70;
+  }
+}
+
+@keyframes dash_xl {
+  0%   {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%  {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -90;
+  }
+}
+
+@keyframes dash_xxl {
+  0%   {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%  {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -95;
+  }
+}
+
+@keyframes color {
+  0%   {stroke: $success-color;}
+  20%  {stroke: $success-color;}
+  25%  {stroke: $info-color;}
+  45%  {stroke: $info-color;}
+  50%  {stroke: $warning-color;}
+  70%  {stroke: $warning-color;}
+  75%  {stroke: $danger-color;}
+  95%  {stroke: $danger-color;}
+}
