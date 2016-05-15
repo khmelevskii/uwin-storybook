@@ -41,15 +41,16 @@ export const spaceHOC = compose( // {{{
 
   withPropsOnChange( // {{{
     [
-      'x', 'y', 'className',
+      'x', 'y', 'div', 'className',
     ],
     ({
-      x, y, className,
+      x, y, div, className,
     }) => {
       const cx = classNames.bind(css);
       const spaceX = x === 0 && y === 0 ? 1 : x;
 
       return {
+        div: div || y > 0,
         className: cx({ // {{{
           space,
 

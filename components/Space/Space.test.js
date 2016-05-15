@@ -31,7 +31,7 @@ describe('<Space />', () => {
       <Space y={3} />
     ).find(Space);
 
-    expect(wrapper).to.have.tagName('span')
+    expect(wrapper).to.have.tagName('div')
       .and.to.have.className(scss.y3)
       .and.not.to.have.className(scss.x1);
   }); // }}}
