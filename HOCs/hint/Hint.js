@@ -68,7 +68,7 @@ export const hintHOC = compose( // {{{
     cssClasses: css,
     className: '',
     hintClassName: '',
-    accent: 'info',
+    accent: 'default',
     position: 'top',
     hoverable: false,
     always: false,

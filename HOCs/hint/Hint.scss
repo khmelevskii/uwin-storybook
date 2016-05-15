@@ -1,7 +1,100 @@
 @import 'html-hint/dist/html-hint.css';
+@import 'variables.scss';
 
 .main {
   composes: hint--html;
+
+  &.hint {
+    &--default {
+      .tooltip {
+        background-color: $default-color;
+      }
+
+      &.hint--top:before { border-top-color: $default-color; }
+      &.hint--top-right:before { border-top-color: $default-color; }
+      &.hint--top-left:before { border-top-color: $default-color; }
+      &.hint--right:before { border-right-color: $default-color; }
+      &.hint--bottom:before { border-bottom-color: $default-color; }
+      &.hint--bottom-right:before { border-bottom-color: $default-color; }
+      &.hint--bottom-left:before { border-bottom-color: $default-color; }
+      &.hint--left:before { border-left-color: $default-color; }
+    }
+
+    &--primary {
+      .tooltip {
+        background-color: $primary-color;
+      }
+
+      &.hint--top:before { border-top-color: $primary-color; }
+      &.hint--top-right:before { border-top-color: $primary-color; }
+      &.hint--top-left:before { border-top-color: $primary-color; }
+      &.hint--right:before { border-right-color: $primary-color; }
+      &.hint--bottom:before { border-bottom-color: $primary-color; }
+      &.hint--bottom-right:before { border-bottom-color: $primary-color; }
+      &.hint--bottom-left:before { border-bottom-color: $primary-color; }
+      &.hint--left:before { border-left-color: $primary-color; }
+    }
+
+    &--success {
+      .tooltip {
+        background-color: $success-color;
+      }
+
+      &.hint--top:before { border-top-color: $success-color; }
+      &.hint--top-right:before { border-top-color: $success-color; }
+      &.hint--top-left:before { border-top-color: $success-color; }
+      &.hint--right:before { border-right-color: $success-color; }
+      &.hint--bottom:before { border-bottom-color: $success-color; }
+      &.hint--bottom-right:before { border-bottom-color: $success-color; }
+      &.hint--bottom-left:before { border-bottom-color: $success-color; }
+      &.hint--left:before { border-left-color: $success-color; }
+    }
+
+    &--info {
+      .tooltip {
+        background-color: $info-color;
+      }
+
+      &.hint--top:before { border-top-color: $info-color; }
+      &.hint--top-right:before { border-top-color: $info-color; }
+      &.hint--top-left:before { border-top-color: $info-color; }
+      &.hint--right:before { border-right-color: $info-color; }
+      &.hint--bottom:before { border-bottom-color: $info-color; }
+      &.hint--bottom-right:before { border-bottom-color: $info-color; }
+      &.hint--bottom-left:before { border-bottom-color: $info-color; }
+      &.hint--left:before { border-left-color: $info-color; }
+    }
+
+    &--warning {
+      .tooltip {
+        background-color: $warning-color;
+      }
+
+      &.hint--top:before { border-top-color: $warning-color; }
+      &.hint--top-right:before { border-top-color: $warning-color; }
+      &.hint--top-left:before { border-top-color: $warning-color; }
+      &.hint--right:before { border-right-color: $warning-color; }
+      &.hint--bottom:before { border-bottom-color: $warning-color; }
+      &.hint--bottom-right:before { border-bottom-color: $warning-color; }
+      &.hint--bottom-left:before { border-bottom-color: $warning-color; }
+      &.hint--left:before { border-left-color: $warning-color; }
+    }
+
+    &--danger {
+      .tooltip {
+        background-color: $danger-color;
+      }
+
+      &.hint--top:before { border-top-color: $danger-color; }
+      &.hint--top-right:before { border-top-color: $danger-color; }
+      &.hint--top-left:before { border-top-color: $danger-color; }
+      &.hint--right:before { border-right-color: $danger-color; }
+      &.hint--bottom:before { border-bottom-color: $danger-color; }
+      &.hint--bottom-right:before { border-bottom-color: $danger-color; }
+      &.hint--bottom-left:before { border-bottom-color: $danger-color; }
+      &.hint--left:before { border-left-color: $danger-color; }
+    }
+  }
 }
 
 .tooltip {
