@@ -94,8 +94,9 @@ module.exports = {
     new SvgStore([
       path.join(staticPath, 'icons', '**', '*.svg'),
       path.join(
-        path.resolve(__dirname, '..'), 'node_modules', 'material-design-icons',
-        '*', 'svg', 'production', '*48px.svg'
+        path.resolve(__dirname, '..'), 'node_modules', 'material-design-icons', 'alert',
+        //'*', 
+        'svg', 'production', '*48px.svg'
       ),
     ],
     '',
@@ -124,6 +125,8 @@ module.exports = {
       }),
       require('precss')(),
       require('rucksack-css')(),
+      require("postcss-calc")(),
+      require('postcss-color-function')(),
       require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS }),
     ];
   },

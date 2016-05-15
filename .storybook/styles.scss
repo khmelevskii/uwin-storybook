@@ -1,10 +1,14 @@
 @import 'normalize.css/normalize.css';
+@import 'variables.scss';
 
 html, body {
   height: 100%;
 }
 
 body {
+  font-size: 16px;
+  font-family: $font-family;
+  color: $primary-text-color;
   text-rendering: optimizeLegibility;
 }
 
