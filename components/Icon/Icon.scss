@@ -1,4 +1,4 @@
-@import 'variables.css';
+@import 'variables.scss';
 
 .icon {
   fill: $base-icon-color;
@@ -10,8 +10,8 @@
 
 .size {
   &_xs {
-    width: $scale2;
-    height: $scale2;
+    width: calc($scale2 * 0.8);
+    height: calc($scale2 * 0.8);
   }
 
   &_s {
