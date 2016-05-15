@@ -16,12 +16,11 @@ const { // {{{
  * Svg icon component
  */
 export const icon = ({ // {{{
-  file,
   prefix,
   name,
   ...props,
 }) => {
-  const svg = `<use xlink:href="${file}#${prefix}${name}"></use>`;
+  const svg = `<use xlink:href="#${prefix}${name}"></use>`;
 
   return (
     <Base
@@ -31,11 +30,10 @@ export const icon = ({ // {{{
 }; // }}}
 
 icon.propTypes = { // {{{
-  file: string,
   prefix: string,
   name: string.isRequired,
   accent: oneOf([ // {{{
-    'none',
+    '',
     'default',
     'primary',
     'success',
@@ -57,7 +55,6 @@ icon.propTypes = { // {{{
 
 export const iconHOC = compose( // {{{
   defaultProps({ // {{{
-    file: '',
     prefix: 'icon-',
     name: '',
     accent: 'default',
