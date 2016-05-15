@@ -9,7 +9,6 @@ import scss from './Icon.scss';
 
 const { // {{{
   string,
-  bool,
   oneOf,
 } = PropTypes; // }}}
 
@@ -35,8 +34,16 @@ icon.propTypes = { // {{{
   file: string,
   prefix: string,
   name: string.isRequired,
+  accent: oneOf([ // {{{
+    'none',
+    'default',
+    'primary',
+    'success',
+    'info',
+    'warning',
+    'danger',
+  ]), // }}}
   fill: string,
-  fillInvert: bool,
 
   size: oneOf([ // {{{
     'xs',
@@ -53,24 +60,24 @@ export const iconHOC = compose( // {{{
     file: '',
     prefix: 'icon-',
     name: '',
+    accent: 'default',
     size: 'm',
-    fillInvert: false,
   }), // }}}
 
   withPropsOnChange( // {{{
     [
-      'className', 'size', 'fill', 'fillInvert', 'style',
+      'className', 'size', 'accent', 'fill', 'style',
     ],
     ({
-      className, size, fill, fillInvert, style,
+      className, size, accent, fill, style,
     }) => {
       const cx = classNames.bind(scss);
 
       return {
         className: cx({
           icon: true,
-          icon_invert: fillInvert,
           [`size_${size}`]: !!size,
+          [`accent_${accent}`]: !!!fill,
           [className]: !!className,
         }),
         style: { ...style, fill }
