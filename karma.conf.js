@@ -27,7 +27,7 @@ module.exports = function (config) {
     },
 
     mochaReporter: {
-      output: 'minimal' // minimal
+      output: 'minimal'
     },
 
     plugins: [
@@ -71,6 +71,11 @@ module.exports = function (config) {
               process.cwd() + '/components',
             ],
           }),
+          require('precss')(),
+          require('rucksack-css')(),
+          require("postcss-calc")(),
+          require('postcss-color-function')(),
+          require('autoprefixer')(),
         ];
       },
       externals: {
