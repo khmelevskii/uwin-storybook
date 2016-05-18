@@ -88,9 +88,8 @@ export const loaderHOC = compose( // {{{
 
       return {
         className: cx({
-          loader: true,
           [`size_${size}`]: !!size,
-          [`accent_${accent}`]: !!!color,
+          [`accent_${accent}`]: !!!color && accent !== '',
           [className]: !!className,
         }),
       };
