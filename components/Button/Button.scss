@@ -1,0 +1,877 @@
+@import 'variables.scss';
+
+.button {
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+
+  &Content {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &_withCaption {
+    padding: 0 $scale2;
+  }
+
+  &Icon {
+    fill: #fff;
+
+    &_right {
+      margin-left: $scale1;
+    }
+
+    &_left {
+      margin-right: $scale1;
+    }
+  }
+
+  &Loader {
+    stroke: #fff;
+
+    &_right {
+      margin-left: $scale1;
+    }
+
+    &_left {
+      margin-right: $scale1;
+    }
+
+    &_outer {
+      position: absolute;
+      left: calc($scale4 * -1);
+    }
+  }
+
+  &_xs {
+    height: $button-xs;
+    min-width: $button-xs;
+    font-size: 10px;
+
+    &.button_withCaption {
+      padding: 0 $scale1;
+    }
+
+    &.button_pill {
+      border-radius: calc($button-xs / 2 + 1);
+    }
+
+    .buttonIcon_left {
+      margin-right: calc($scale1 * .5);
+    }
+
+    .buttonIcon_right {
+      margin-left: calc($scale1 * .5);
+    }
+  }
+
+  &_s {
+    height: $button-s;
+    min-width: $button-s;
+    font-size: 12px;
+
+    &.button_withCaption {
+      padding: 0 calc($scale2 * .7);
+    }
+
+    &.button_pill {
+      border-radius: calc($button-s / 2 + 1);
+    }
+
+    .buttonIcon_left {
+      margin-right: calc($scale1 * .7);
+    }
+
+    .buttonIcon_right {
+      margin-left: calc($scale1 * .7);
+    }
+  }
+
+  &_m {
+    height: $button-m;
+    min-width: $button-m;
+
+    &.button_pill {
+      border-radius: calc($button-m / 2 + 1);
+    }
+  }
+
+  &_l {
+    height: $button-l;
+    min-width: $button-l;
+
+    &.button_pill {
+      border-radius: calc($button-l / 2 + 1);
+    }
+  }
+
+  &_xl {
+    height: $button-xl;
+    min-width: $button-xl;
+
+    &.button_pill {
+      border-radius: calc($button-xl / 2 + 1);
+    }
+  }
+
+  &_xxl {
+    height: $button-xxl;
+    min-width: $button-xxl;
+
+    &.button_pill {
+      border-radius: calc($button-xxl / 2 + 1);
+    }
+  }
+
+  &_default {
+    transition: background-color $transition, box-shadow $transition, border-color $transition;
+
+    &_default {
+      background-color: $default-color;
+      border-color: $default-color;
+
+      .buttonLoader_outer {
+        stroke: $default-color;
+      }
+
+      &:hover {
+        background-color: color($default-color lightness(+5));
+        border-color: color($default-color lightness(+5));
+      }
+
+      &:active {
+        background-color: color($default-color lightness(-7));
+        border-color: color($default-color lightness(-7));
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($default-color lightness(-7) a(90%));
+      }
+
+      &.button_disabled {
+        background-color: color($default-color lightness(+20%));
+        border-color: color($default-color lightness(+20%));
+        color: color(#fff blend($default-color 10%));
+
+        .buttonIcon {
+          fill: color(#fff blend($default-color 10%));
+        }
+      }
+    }
+
+    &_primary {
+      background-color: $primary-color;
+      border-color: $primary-color;
+
+      .buttonLoader_outer {
+        stroke: $primary-color;
+      }
+
+      &:hover {
+        background-color: color($primary-color lightness(+5));
+        border-color: color($primary-color lightness(+5));
+      }
+
+      &:active {
+        background-color: color($primary-color lightness(-7));
+        border-color: color($primary-color lightness(-7));
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($primary-color lightness(-7) a(90%));
+      }
+
+      &.button_disabled {
+        background-color: color($primary-color lightness(+25%));
+        border-color: color($primary-color lightness(+25%));
+        color: color(#fff blend($primary-color 10%));
+
+        .buttonIcon {
+          fill: color(#fff blend($primary-color 10%));
+        }
+      }
+    }
+
+    &_success {
+      background-color: $success-color;
+      border-color: $success-color;
+
+      .buttonLoader_outer {
+        stroke: $success-color;
+      }
+
+      &:hover {
+        background-color: color($success-color lightness(+5));
+        border-color: color($success-color lightness(+5));
+      }
+
+      &:active {
+        background-color: color($success-color lightness(-7));
+        border-color: color($success-color lightness(-7));
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($success-color lightness(-7) a(90%));
+      }
+
+      &.button_disabled {
+        background-color: color($success-color lightness(+20%));
+        border-color: color($success-color lightness(+20%));
+        color: color(#fff blend($success-color 10%));
+
+        .buttonIcon {
+          fill: color(#fff blend($success-color 10%));
+        }
+      }
+    }
+
+    &_info {
+      background-color: $info-color;
+      border-color: $info-color;
+
+      .buttonLoader_outer {
+        stroke: $info-color;
+      }
+
+      &:hover {
+        background-color: color($info-color lightness(+5));
+        border-color: color($info-color lightness(+5));
+      }
+
+      &:active {
+        background-color: color($info-color lightness(-7));
+        border-color: color($info-color lightness(-7));
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($info-color lightness(-7) a(90%));
+      }
+
+      &.button_disabled {
+        background-color: color($info-color lightness(+20%));
+        border-color: color($info-color lightness(+20%));
+        color: color(#fff blend($info-color 10%));
+
+        .buttonIcon {
+          fill: color(#fff blend($info-color 10%));
+        }
+      }
+    }
+
+    &_warning {
+      background-color: $warning-color;
+      border-color: $warning-color;
+
+      .buttonLoader_outer {
+        stroke: $warning-color;
+      }
+
+      &:hover {
+        background-color: color($warning-color lightness(+5));
+        border-color: color($warning-color lightness(+5));
+      }
+
+      &:active {
+        background-color: color($warning-color lightness(-7));
+        border-color: color($warning-color lightness(-7));
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($warning-color lightness(-7) a(90%));
+      }
+
+      &.button_disabled {
+        background-color: color($warning-color lightness(+20%));
+        border-color: color($warning-color lightness(+20%));
+        color: color(#fff blend($warning-color 10%));
+
+        .buttonIcon {
+          fill: color(#fff blend($warning-color 10%));
+        }
+      }
+    }
+
+    &_danger {
+      background-color: $danger-color;
+      border-color: $danger-color;
+
+      .buttonLoader_outer {
+        stroke: $danger-color;
+      }
+
+      &:hover {
+        background-color: color($danger-color lightness(+5));
+        border-color:  color($danger-color lightness(+5));
+      }
+
+      &:active {
+        background-color: color($danger-color lightness(-7));
+        border-color: color($danger-color lightness(-7));
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($danger-color lightness(-7) a(90%));
+      }
+
+      &.button_disabled {
+        background-color: color($danger-color lightness(+25%));
+        border-color: color($danger-color lightness(+25%));
+        color: color(#fff blend($danger-color 10%));
+
+        .buttonIcon {
+          fill: color(#fff blend($danger-color 10%));
+        }
+      }
+    }
+  }
+
+  &_outline {
+    transition: border-color $transition, color $transition, background $transition, box-shadow $transition;
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(#8a949f, .1);
+    }
+
+    &:active {
+      background-color: rgba(#8a949f, .2);
+    }
+
+    &_default {
+      border-color: $default-color;
+      color: $default-color;
+
+      .buttonIcon {
+        fill: $default-color;
+      }
+
+      .buttonLoader {
+        stroke: $default-color;
+      }
+
+      &:hover {
+        border-color: color($default-color lightness(+5));
+        color: color($default-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($default-color lightness(+5));
+        }
+      }
+
+      &:active {
+        border-color: color($default-color lightness(-7));
+        color: color($default-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($default-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($default-color lightness(-7) a(60%));
+      }
+
+      &.button_disabled {
+        border-color: color($default-color blend(#fff 50%));
+        color: color($default-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($default-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_primary {
+      border-color: $primary-color;
+      color: $primary-color;
+
+      .buttonIcon {
+        fill: $primary-color;
+      }
+
+      .buttonLoader {
+        stroke: $primary-color;
+      }
+
+      &:hover {
+        border-color: color($primary-color lightness(+5));
+        color: color($primary-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($primary-color lightness(+5));
+        }
+      }
+
+      &:active {
+        border-color: color($primary-color lightness(-7));
+        color: color($primary-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($primary-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($primary-color lightness(-7) a(60%));
+      }
+
+      &.button_disabled {
+        border-color: color($primary-color blend(#fff 50%));
+        color: color($primary-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($primary-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_success {
+      border-color: $success-color;
+      color: $success-color;
+
+      .buttonIcon {
+        fill: $success-color;
+      }
+
+      .buttonLoader {
+        stroke: $success-color;
+      }
+
+      &:hover {
+        border-color: color($success-color lightness(+5));
+        color: color($success-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($success-color lightness(+5));
+        }
+      }
+
+      &:active {
+        border-color: color($success-color lightness(-7));
+        color: color($success-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($success-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($success-color lightness(-7) a(60%));
+      }
+
+      &.button_disabled {
+        border-color: color($success-color blend(#fff 50%));
+        color: color($success-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($success-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_info {
+      border-color: $info-color;
+      color: $info-color;
+
+      .buttonIcon {
+        fill: $info-color;
+      }
+
+      .buttonLoader {
+        stroke: $info-color;
+      }
+
+      &:hover {
+        border-color: color($info-color lightness(+5));
+        color: color($info-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($info-color lightness(+5));
+        }
+      }
+
+      &:active {
+        border-color: color($info-color lightness(-7));
+        color: color($info-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($info-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($info-color lightness(-7) a(60%));
+      }
+
+      &.button_disabled {
+        border-color: color($info-color blend(#fff 50%));
+        color: color($info-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($info-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_warning {
+      border-color: $warning-color;
+      color: $warning-color;
+
+      .buttonIcon {
+        fill: $warning-color;
+      }
+
+      .buttonLoader {
+        stroke: $warning-color;
+      }
+
+      &:hover {
+        border-color: color($warning-color lightness(+5));
+        color: color($warning-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($warning-color lightness(+5));
+        }
+      }
+
+      &:active {
+        border-color: color($warning-color lightness(-7));
+        color: color($warning-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($warning-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($warning-color lightness(-7) a(60%));
+      }
+
+      &.button_disabled {
+        border-color: color($warning-color blend(#fff 50%));
+        color: color($warning-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($warning-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_danger {
+      border-color: $danger-color;
+      color: $danger-color;
+
+      .buttonIcon {
+        fill: $danger-color;
+      }
+
+      .buttonLoader {
+        stroke: $danger-color;
+      }
+
+      &:hover {
+        border-color: color($danger-color lightness(+5));
+        color: color($danger-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($danger-color lightness(+5));
+        }
+      }
+
+      &:active {
+        border-color: color($danger-color lightness(-7));
+        color: color($danger-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($danger-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($danger-color lightness(-7) a(60%));
+      }
+
+      &.button_disabled {
+        border-color: color($danger-color blend(#fff 50%));
+        color: color($danger-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($danger-color blend(#fff 50%));
+        }
+      }
+    }
+  }
+
+  &_simplified {
+    transition: color $transition, background $transition, border-color $transition, box-shadow $transition;
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover {
+      background-color: rgba(#9a949f, .1);
+    }
+
+    &:active {
+      background-color: rgba(#8a949f, .2);
+    }
+
+    &_default {
+      color: $default-color;
+
+      .buttonIcon {
+        fill: $default-color;
+      }
+
+      .buttonLoader {
+        stroke: $default-color;
+      }
+
+      &:hover {
+        color: color($default-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($default-color lightness(+5));
+        }
+      }
+
+      &:active {
+        color: color($default-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($default-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($default-color lightness(-7) a(20%));
+      }
+
+      &.button_disabled {
+        color: color($default-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($default-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_primary {
+      color: $primary-color;
+
+      .buttonIcon {
+        fill: $primary-color;
+      }
+
+      .buttonLoader {
+        stroke: $primary-color;
+      }
+
+      &:hover {
+        color: color($primary-color lightness(+5));
+
+        .buttonIcon {
+          fill: color($primary-color lightness(+5));
+        }
+      }
+
+      &:active {
+        color: color($primary-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($primary-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($primary-color lightness(-7) a(20%));
+      }
+
+      &.button_disabled {
+        color: color($primary-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($primary-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_success {
+      color: $success-color;
+
+      .buttonIcon {
+        fill: $success-color;
+      }
+
+      .buttonLoader {
+        stroke: $sucess-color;
+      }
+
+      &:hover {
+        color:  color($success-color lightness(+5));
+
+        .buttonIcon {
+          fill:  color($success-color lightness(+5));
+        }
+      }
+
+      &:active {
+        color: color($success-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($success-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($success-color lightness(-7) a(20%));
+      }
+
+      &.button_disabled {
+        color: color($success-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($success-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_info {
+      color: $info-color;
+
+      .buttonIcon {
+        fill: $info-color;
+      }
+
+      .buttonLoader {
+        stroke: $info-color;
+      }
+
+      &:hover {
+        color:  color($info-color lightness(+5));
+
+        .buttonIcon {
+          fill:  color($info-color lightness(+5));
+        }
+      }
+
+      &:active {
+        color: color($info-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($info-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($info-color lightness(-7) a(20%));
+      }
+
+      &.button_disabled {
+        color: color($info-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($info-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_warning {
+      color: $warning-color;
+
+      .buttonIcon {
+        fill: $warning-color;
+      }
+
+      .buttonLoader {
+        stroke: $warning-color;
+      }
+
+      &:hover {
+        color:  color($warning-color lightness(+5));
+
+        .buttonIcon {
+          fill:  color($warning-color lightness(+5));
+        }
+      }
+
+      &:active {
+        color: color($warning-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($warning-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($warning-color lightness(-7) a(20%));
+      }
+
+      &.button_disabled {
+        color: color($warning-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($warning-color blend(#fff 50%));
+        }
+      }
+    }
+
+    &_danger {
+      color: $danger-color;
+
+      .buttonIcon {
+        fill: $danger-color;
+      }
+
+      .buttonLoader {
+        stroke: $danger-color;
+      }
+
+      &:hover {
+        color:  color($danger-color lightness(+5));
+
+        .buttonIcon {
+          fill:  color($danger-color lightness(+5));
+        }
+      }
+
+      &:active {
+        color: color($danger-color lightness(-7));
+
+        .buttonIcon {
+          fill: color($danger-color lightness(-7));
+        }
+      }
+
+      &:focus:not(:active) {
+        box-shadow: 0 0 5px color($danger-color lightness(-7) a(20%));
+      }
+
+      &.button_disabled {
+        color: color($danger-color blend(#fff 50%));
+
+        .buttonIcon {
+          fill: color($danger-color blend(#fff 50%));
+        }
+      }
+    }
+  }
+
+  &_disabled {
+    // pointer-events: none;
+    // cursor: default;
+  }
+}
