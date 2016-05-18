@@ -72,9 +72,8 @@ export const iconHOC = compose( // {{{
 
       return {
         className: cx({
-          icon: true,
           [`size_${size}`]: !!size,
-          [`accent_${accent}`]: !!!fill,
+          [`accent_${accent}`]: !!!fill && accent !== '',
           [className]: !!className,
         }),
         style: { ...style, fill }
