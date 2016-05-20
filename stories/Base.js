@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import Base from '../components/Base';
-import Flex from '../components/Flex';
+import Base from 'components/Base';
+import Flex from 'components/Flex';
 
 storiesOf('Base container', module)
   .add('default view', () => ( // {{{

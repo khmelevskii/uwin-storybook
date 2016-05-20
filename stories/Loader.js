@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import Loader from '../components/Loader';
-import Space from '../components/Space';
+import Loader from 'components/Loader';
+import Space from 'components/Space';
 
 storiesOf('Loader', module)
   .add('default view', () => ( // {{{

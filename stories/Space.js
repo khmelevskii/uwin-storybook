@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import Space from '../components/Space';
+import Space from 'components/Space';
 
 const inlineStyle = {
   display: 'inline-block',

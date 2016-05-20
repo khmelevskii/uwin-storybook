@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import Tooltip from '../components/Tooltip';
-import Button from '../components/Button';
-import Space from '../components/Space';
+import Tooltip from 'components/Tooltip';
+import Button from 'components/Button';
+import Space from 'components/Space';
 
 storiesOf('Tooltip', module)
   .add('default view', () => ( // {{{
