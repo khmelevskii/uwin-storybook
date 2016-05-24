@@ -57,14 +57,13 @@ describe('<Hint />', () => {
     expect(wrapper.find(`.${scss['hint--hidden']}`)).to.present();
   }); // }}}
 
-  it('should render with shows hind and hidden when hover', () => { // {{{
+  it('should render with shows and hidden when hover', () => { // {{{
     const wrapper = mount(
       <WrapperComponent hint="test" always hidden>content</WrapperComponent>
     ).find(WrapperComponent);
 
-    expect(wrapper
-      .find(`.${scss['hint--hidden']}.${scss['hint--always']}`)
-    ).to.present();
+    expect(wrapper.find(`.${scss['hint--hidden']}`)).to.present();
+    expect(wrapper.find(`.${scss['hint--always']}`)).to.present();
   }); // }}}
 
   it('should render with top position', () => { // {{{
