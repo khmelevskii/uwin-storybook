@@ -148,12 +148,12 @@
         stroke: $default-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         background-color: color($default-color lightness(+5));
         border-color: color($default-color lightness(+5));
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         background-color: color($default-color lightness(-7));
         border-color: color($default-color lightness(-7));
       }
@@ -181,12 +181,12 @@
         stroke: $primary-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         background-color: color($primary-color lightness(+5));
         border-color: color($primary-color lightness(+5));
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         background-color: color($primary-color lightness(-7));
         border-color: color($primary-color lightness(-7));
       }
@@ -214,12 +214,12 @@
         stroke: $success-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         background-color: color($success-color lightness(+5));
         border-color: color($success-color lightness(+5));
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         background-color: color($success-color lightness(-7));
         border-color: color($success-color lightness(-7));
       }
@@ -247,12 +247,12 @@
         stroke: $info-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         background-color: color($info-color lightness(+5));
         border-color: color($info-color lightness(+5));
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         background-color: color($info-color lightness(-7));
         border-color: color($info-color lightness(-7));
       }
@@ -280,12 +280,12 @@
         stroke: $warning-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         background-color: color($warning-color lightness(+5));
         border-color: color($warning-color lightness(+5));
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         background-color: color($warning-color lightness(-7));
         border-color: color($warning-color lightness(-7));
       }
@@ -313,12 +313,12 @@
         stroke: $danger-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         background-color: color($danger-color lightness(+5));
         border-color:  color($danger-color lightness(+5));
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         background-color: color($danger-color lightness(-7));
         border-color: color($danger-color lightness(-7));
       }
@@ -343,11 +343,11 @@
     transition: border-color $transition, color $transition, background $transition, box-shadow $transition;
     background-color: transparent;
 
-    &:hover {
+    &:hover:not(.button_disabled) {
       background-color: rgba(#8a949f, .1);
     }
 
-    &:active {
+    &:active:not(.button_disabled) {
       background-color: rgba(#8a949f, .2);
     }
 
@@ -363,7 +363,7 @@
         stroke: $default-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         border-color: color($default-color lightness(+5));
         color: color($default-color lightness(+5));
 
@@ -372,7 +372,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         border-color: color($default-color lightness(-7));
         color: color($default-color lightness(-7));
 
@@ -407,7 +407,7 @@
         stroke: $primary-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         border-color: color($primary-color lightness(+5));
         color: color($primary-color lightness(+5));
 
@@ -416,7 +416,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         border-color: color($primary-color lightness(-7));
         color: color($primary-color lightness(-7));
 
@@ -451,7 +451,7 @@
         stroke: $success-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         border-color: color($success-color lightness(+5));
         color: color($success-color lightness(+5));
 
@@ -460,7 +460,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         border-color: color($success-color lightness(-7));
         color: color($success-color lightness(-7));
 
@@ -495,7 +495,7 @@
         stroke: $info-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         border-color: color($info-color lightness(+5));
         color: color($info-color lightness(+5));
 
@@ -504,7 +504,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         border-color: color($info-color lightness(-7));
         color: color($info-color lightness(-7));
 
@@ -539,7 +539,7 @@
         stroke: $warning-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         border-color: color($warning-color lightness(+5));
         color: color($warning-color lightness(+5));
 
@@ -548,7 +548,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         border-color: color($warning-color lightness(-7));
         color: color($warning-color lightness(-7));
 
@@ -583,7 +583,7 @@
         stroke: $danger-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         border-color: color($danger-color lightness(+5));
         color: color($danger-color lightness(+5));
 
@@ -592,7 +592,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         border-color: color($danger-color lightness(-7));
         color: color($danger-color lightness(-7));
 
@@ -621,11 +621,11 @@
     background-color: transparent;
     border-color: transparent;
 
-    &:hover {
+    &:hover:not(.button_disabled) {
       background-color: rgba(#9a949f, .1);
     }
 
-    &:active {
+    &:active:not(.button_disabled) {
       background-color: rgba(#8a949f, .2);
     }
 
@@ -640,7 +640,7 @@
         stroke: $default-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         color: color($default-color lightness(+5));
 
         .buttonIcon {
@@ -648,7 +648,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         color: color($default-color lightness(-7));
 
         .buttonIcon {
@@ -680,7 +680,7 @@
         stroke: $primary-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         color: color($primary-color lightness(+5));
 
         .buttonIcon {
@@ -688,7 +688,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         color: color($primary-color lightness(-7));
 
         .buttonIcon {
@@ -720,7 +720,7 @@
         stroke: $sucess-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         color:  color($success-color lightness(+5));
 
         .buttonIcon {
@@ -728,7 +728,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         color: color($success-color lightness(-7));
 
         .buttonIcon {
@@ -760,7 +760,7 @@
         stroke: $info-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         color:  color($info-color lightness(+5));
 
         .buttonIcon {
@@ -768,7 +768,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         color: color($info-color lightness(-7));
 
         .buttonIcon {
@@ -800,7 +800,7 @@
         stroke: $warning-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         color:  color($warning-color lightness(+5));
 
         .buttonIcon {
@@ -808,7 +808,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         color: color($warning-color lightness(-7));
 
         .buttonIcon {
@@ -840,7 +840,7 @@
         stroke: $danger-color;
       }
 
-      &:hover {
+      &:hover:not(.button_disabled) {
         color:  color($danger-color lightness(+5));
 
         .buttonIcon {
@@ -848,7 +848,7 @@
         }
       }
 
-      &:active {
+      &:active:not(.button_disabled) {
         color: color($danger-color lightness(-7));
 
         .buttonIcon {
