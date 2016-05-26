@@ -25,20 +25,25 @@ const { // {{{
 export const input = ({ // {{{
   label,
   error,
+  wrapperClassName,
+  wrapperStyle,
   ...props,
 }) => {
   const Component = 'input';
 
   const cx = classNames.bind(scss);
-  const elementWrapClasses = cx({
-    input__elementWrap: true,
-    input__elementWrap_withoutLabel: !!!label,
+  const controlWrapClasses = cx({
+    input__controlWrap: true,
+    input__controlWrap_withoutLabel: !!!label,
   });
 
   return (
-    <div className={scss.input__wrap}>
+    <div
+      style={wrapperStyle}
+      className={[scss.input__wrap, wrapperClassName].join(' ').trim()}
+    >
       {label}
-      <span className={elementWrapClasses}>
+      <span className={controlWrapClasses}>
         <Component {...props} />
         {error}
       </span>
@@ -97,8 +102,20 @@ input.propTypes = { // {{{
   // Css class for element
   className: string,
 
+  // Css class for label
+  labelClassName: string,
+
+  // Css class for wrapper
+  wrapperClassName: string,
+
   // Styles object
   style: object,
+
+  // Styles for label
+  labelStyle: object,
+
+  // Styles for wrapper
+  wrapperStyle: object,
 
   maxLength: number,
 
@@ -182,13 +199,9 @@ export const inputHOC = compose( // {{{
     // process: false,
   }), // }}}
 
+  // id
   withPropsOnChange( // {{{
-    [
-      'id',
-    ],
-    ({
-      id,
-    }) => {
+    ['id'], ({ id }) => {
       const calcId = id || [
         'input',
         +(new Date),
@@ -202,6 +215,7 @@ export const inputHOC = compose( // {{{
     },
   ), // }}}
 
+  // className
   withPropsOnChange( // {{{
     [
       'className', 'size', 'error',
@@ -224,12 +238,13 @@ export const inputHOC = compose( // {{{
     },
   ), // }}}
 
+  // label
   withPropsOnChange( // {{{
     [
-      'id', 'label', 'required',
+      'id', 'label', 'required', 'labelClassName', 'labelStyle',
     ],
     ({
-      id, label, required,
+      id, label, required, labelClassName, labelStyle,
     }) => {
       if (!!!label) return { label: null };
 
@@ -238,7 +253,10 @@ export const inputHOC = compose( // {{{
         : null;
 
       const labelComponent = (
-        <label className={scss.input__label} htmlFor={id}>
+        <label
+          className={[scss.input__label, labelClassName].join(' ').trim()}
+          htmlFor={id} style={labelStyle}
+        >
           {label}{reqBadge}
         </label>
       );
@@ -249,6 +267,7 @@ export const inputHOC = compose( // {{{
     },
   ), // }}}
 
+  // placeholder
   withPropsOnChange( // {{{
     [
       'placeholder', 'required', 'label',
@@ -262,13 +281,9 @@ export const inputHOC = compose( // {{{
     }),
   ), // }}}
 
+  // error
   withPropsOnChange( // {{{
-    [
-      'error'
-    ],
-    ({
-      error,
-    }) => {
+    ['error'], ({ error }) => {
       if (!!!error) return { error: null };
 
       const errorComponent =
