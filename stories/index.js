@@ -6,6 +6,7 @@ import './Loader';
 import './Button';
 import './Input';
 import './Checkbox';
+import './SimpleSelect';
 // import './Appbar';
 // import './Box';
 // import './Flex';
