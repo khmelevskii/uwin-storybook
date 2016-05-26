@@ -42,6 +42,7 @@
     "postcss-calc": "^5.2.1",
     "postcss-color-function": "^2.0.1",
     "postcss-import": "^8.0.2",
+    "postcss-inline-svg": "^1.4.0",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
     "react-addons-test-utils": "^15.0.1",
