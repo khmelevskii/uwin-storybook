@@ -23,9 +23,14 @@ const { // {{{
 export const checkbox = ({ // {{{
   label,
   error,
+  wrapperClassName,
+  wrapperStyle,
   ...props,
 }) =>
-  <div className={scss.checkbox__wrap}>
+  <div
+    style={wrapperStyle}
+    className={[scss.checkbox__wrap, wrapperClassName].join(' ').trim()}
+  >
     <input type="checkbox" {...props} value />
     {label}
     {error}
@@ -58,11 +63,23 @@ checkbox.propTypes = { // {{{
 
   focus: bool,
 
-  // Css class for element
+  // Css class for control
   className: string,
 
-  // Styles object
+  // Css class for label
+  labelClassName: string,
+
+  // Css class for wrapper
+  wrapperClassName: string,
+
+  // Style for control
   style: object,
+
+  // Style for label
+  labelStyle: object,
+
+  // Style for wrapper
+  wrapperStyle: object,
 
   error: string,
 
@@ -98,6 +115,7 @@ export const checkboxHOC = compose( // {{{
     process: false,
   }), // }}}
 
+  // id
   withPropsOnChange( // {{{
     ['id'], ({ id }) => {
       const calcId = id || [
@@ -113,6 +131,7 @@ export const checkboxHOC = compose( // {{{
     },
   ), // }}}
 
+  // className
   withPropsOnChange( // {{{
     [
       'className', 'size', 'error',
@@ -134,12 +153,13 @@ export const checkboxHOC = compose( // {{{
     },
   ), // }}}
 
+  // label
   withPropsOnChange( // {{{
     [
-      'id', 'label', 'required',
+      'id', 'label', 'required', 'labelClassName', 'labelStyle',
     ],
     ({
-      id, label, required,
+      id, label, required, labelClassName, labelStyle,
     }) => {
       if (!!!label) return { label: null };
 
@@ -148,7 +168,10 @@ export const checkboxHOC = compose( // {{{
         : null;
 
       const labelComponent = (
-        <label className={scss.checkbox__label} htmlFor={id}>
+        <label
+          className={[scss.checkbox__label, labelClassName].join(' ').trim()}
+          htmlFor={id} style={labelStyle}
+        >
           {label}{reqBadge}
         </label>
       );
@@ -159,6 +182,7 @@ export const checkboxHOC = compose( // {{{
     },
   ), // }}}
 
+  // error
   withPropsOnChange( // {{{
     ['error'], ({ error }) => {
       if (!!!error) return { error: null };
