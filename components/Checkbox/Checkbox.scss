@@ -1,0 +1,114 @@
+@import 'variables.scss';
+
+.checkbox {
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  width: 38px;
+  height: 38px;
+  vertical-align: middle;
+
+  &_error {
+    border-color: color($danger-color blend($input-border 70%));
+
+    &:hover:not([disabled]) {
+      border-color: color($danger-color blend($input-border 45%));
+    }
+
+    &:focus:not([disabled]) {
+      border-color: $danger-color;
+    }
+  }
+
+  &_size {
+    &_s {
+      width: 31px;
+      height: 31px;
+
+      .checkbox__label {
+        width: calc(100% - 41px);
+      }
+    }
+
+    &_m {
+      width: 38px;
+      height: 38px;
+    }
+
+    &_l {
+      width: 45px;
+      height: 45px;
+
+      .checkbox__label {
+        width: calc(100% - 55px);
+      }
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 20px;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  &__label {
+    margin-left: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 14px;
+    white-space: normal;
+    vertical-align: middle;
+    width: calc(100% - 48px);
+  }
+
+  &__badgeRequired {
+    color: $danger-color;
+    font-weight: bold;
+    font-size: 120%;
+    line-height: 1;
+    margin-left: 3px;
+  }
+
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: $danger-color;
+    font-size: 11px;
+    line-height: 1;
+    white-space: normal;
+  }
+
+}
+
+
+@supports ( -webkit-appearance: none ) or ( appearance: none ) or ( ( -moz-appearance: none ) and ( mask-type: alpha ) ) {
+  .checkbox {
+    background-color: $input-bg;
+    border: 1px solid $input-border;
+    border-radius: 1px;
+    appearance: none;
+
+    &:hover:not([disabled]) {
+      border-color: $input-hover-border;
+    }
+
+    &:focus:not([disabled]) {
+      border-color: $input-focus-border;
+    }
+
+    &:checked {
+      background: svg-load(tick.svg, fill: $default-color) no-repeat center;
+      background-size: 50%;
+    }
+
+    &[disabled] {
+      color: rgba($default-text-color, .6);
+      background-color: color($input-bg blend($default-color 8%));
+      cursor: not-allowed;
+    }
+
+  }
+}
