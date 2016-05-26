@@ -24,7 +24,6 @@ const { // {{{
  */
 export const input = ({ // {{{
   label,
-  id,
   error,
   ...props,
 }) => {
@@ -40,7 +39,7 @@ export const input = ({ // {{{
     <div className={scss.input__wrap}>
       {label}
       <span className={elementWrapClasses}>
-        <Component id={id} {...props} />
+        <Component {...props} />
         {error}
       </span>
     </div>
@@ -185,12 +184,11 @@ export const inputHOC = compose( // {{{
 
   withPropsOnChange( // {{{
     [
-      'id', 'className', 'size', 'error',
+      'id',
     ],
     ({
-      id, className, size, error,
+      id,
     }) => {
-      const cx = classNames.bind(scss);
       const calcId = id || [
         'input',
         +(new Date),
@@ -200,7 +198,20 @@ export const inputHOC = compose( // {{{
 
       return {
         id: calcId,
+      };
+    },
+  ), // }}}
 
+  withPropsOnChange( // {{{
+    [
+      'className', 'size', 'error',
+    ],
+    ({
+      className, size, error,
+    }) => {
+      const cx = classNames.bind(scss);
+
+      return {
         className: cx({
           input: true,
 
