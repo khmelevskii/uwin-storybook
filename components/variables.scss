@@ -24,6 +24,11 @@ $button-xxl: 64px;
 
 $font-family: 'Open Sans',Helvetica,Arial,sans-serif;
 
+$input-bg: #fff;
+$input-border: #dadce2;
+$input-hover-border: color($input-border lightness(-8));
+$input-focus-border: $success-color;
+
 $fast-transition: .25s cubic-bezier(0.3, 1, 0.4, 1) 0s;
 $transition: .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;
 

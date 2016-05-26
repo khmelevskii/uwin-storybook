@@ -36,7 +36,6 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
     "node-sass": "^3.7.0",
-    "npm": "^3.9.0",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss": "^5.0.13",
