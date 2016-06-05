@@ -1,0 +1,7 @@
+{
+  "name": "hint",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./hint.js"
+}
+
