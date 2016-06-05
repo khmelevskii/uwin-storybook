@@ -1,0 +1,130 @@
+@import 'variables.scss';
+
+.formControl {
+  border: 1px solid $input-border;
+  font: $form-control-m-font-size/1.6 $font;
+  padding: 0 12px;
+  background-color: $input-bg;
+  color: $input-color;
+  transition: border-color $transition, background-color $transition;
+  border-radius: 2px;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 300;
+  appearance:none;
+  height: $form-control-m;
+  min-width: $form-control-m;
+
+  &:hover:not([disabled]) {
+    border-color: $input-hover-border;
+  }
+
+  &:focus:not([disabled]) {
+    border-color: $input-focus-border;
+  }
+
+  &[disabled] {
+    color: rgba($input-color, .6);
+    background-color: color($input-bg blend($default-color 8%));
+    cursor: not-allowed;
+  }
+
+  &[readonly] {
+    background-color: color($input-readonly-bg blend($input-bg 90%));
+    cursor: not-allowed;
+  }
+
+  &_error {
+    border-color: color($danger-color blend($input-border 70%));
+
+    &:hover:not([disabled]) {
+      border-color: color($danger-color blend($input-border 45%));
+    }
+
+    &:focus:not([disabled]) {
+      border-color: $danger-color;
+    }
+  }
+
+  &_xs {
+    height: $form-control-xs;
+    min-width: $form-control-xs;
+    font-size: $form-control-xs-font-size;
+  }
+
+  &_s {
+    height: $form-control-s;
+    min-width: $form-control-s;
+    font-size: $form-control-s-font-size;
+  }
+
+  &_l {
+    height: $form-control-l;
+    min-width: $form-control-l;
+    font-size: $form-control-l-font-size;
+  }
+
+  &_xl {
+    height: $form-control-xl;
+    min-width: $form-control-xl;
+    font-size: $form-control-xl-font-size;
+  }
+
+  &_xxl {
+    height: $form-control-xxl;
+    min-width: $form-control-xxl;
+    font-size: $form-control-xxl-font-size;
+  }
+
+  &__wrap {
+    margin-bottom: 20px;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  &__elementWrap {
+    position: relative;
+    display: inline-block;
+    min-width: 60px;
+    width: calc(100% - 90px);
+
+    &_withoutLabel {
+      width: 100%;
+    }
+  }
+
+  &__label {
+    margin-right: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 50px;
+    width: 85px;
+    font-size: 14px;
+    font-weight: 300;
+    white-space: normal;
+    vertical-align: middle;
+  }
+
+  &__badgeRequired {
+    display: inline-block;
+    color: $danger-color;
+    font-weight: bold;
+    font-size: 120%;
+    line-height: 1;
+    margin-left: 3px;
+  }
+
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: $danger-color;
+    font-size: 11px;
+    line-height: 1;
+    white-space: normal;
+  }
+}
+
