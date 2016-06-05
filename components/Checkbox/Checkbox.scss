@@ -1,114 +1,64 @@
 @import 'variables.scss';
 
 .checkbox {
-  margin: 0;
-  outline: 0;
-  box-sizing: border-box;
-  width: 38px;
-  height: 38px;
+  width: $form-control-m;
   vertical-align: middle;
+  cursor: pointer;
 
-  &_error {
-    border-color: color($danger-color blend($input-border 70%));
-
-    &:hover:not([disabled]) {
-      border-color: color($danger-color blend($input-border 45%));
-    }
-
-    &:focus:not([disabled]) {
-      border-color: $danger-color;
-    }
+  &_xs {
+    width: $form-control-xs;
   }
 
-  &_size {
-    &_s {
-      width: 31px;
-      height: 31px;
-
-      .checkbox__label {
-        width: calc(100% - 41px);
-      }
-    }
-
-    &_m {
-      width: 38px;
-      height: 38px;
-    }
-
-    &_l {
-      width: 45px;
-      height: 45px;
-
-      .checkbox__label {
-        width: calc(100% - 55px);
-      }
-    }
+  &_s {
+    width: $form-control-s;
   }
 
-  &__wrap {
-    margin-bottom: 20px;
-    display: inline-block;
-    white-space: nowrap;
-    position: relative;
+  &_l {
+    width: $form-control-l;
+  }
+
+  &_xl {
+    width: $form-control-xl;
+  }
+
+  &_xxl {
+    width: $form-control-xxl;
   }
 
   &__label {
     margin-left: 10px;
-    display: inline-block;
-    box-sizing: border-box;
-    font-size: 14px;
-    white-space: normal;
-    vertical-align: middle;
-    width: calc(100% - 48px);
-  }
+    width: calc(100% - calc($form-control-m + 10));
 
-  &__badgeRequired {
-    color: $danger-color;
-    font-weight: bold;
-    font-size: 120%;
-    line-height: 1;
-    margin-left: 3px;
-  }
+    &_xs {
+      width: calc(100% - calc($form-control-xs + 10));
+    }
 
-  &__error {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    color: $danger-color;
-    font-size: 11px;
-    line-height: 1;
-    white-space: normal;
-  }
+    &_s {
+      width: calc(100% - calc($form-control-s + 10));
+    }
 
+    &_l {
+      width: calc(100% - calc($form-control-l + 10));
+    }
+
+    &_xl {
+      width: calc(100% - calc($form-control-xl + 10));
+    }
+
+    &_xxl {
+      width: calc(100% - calc($form-control-xxl + 10));
+    }
+  }
 }
 
 
 @supports ( -webkit-appearance: none ) or ( appearance: none ) or ( ( -moz-appearance: none ) and ( mask-type: alpha ) ) {
   .checkbox {
-    background-color: $input-bg;
-    border: 1px solid $input-border;
-    border-radius: 1px;
-    appearance: none;
-
-    &:hover:not([disabled]) {
-      border-color: $input-hover-border;
-    }
-
-    &:focus:not([disabled]) {
-      border-color: $input-focus-border;
-    }
-
     &:checked {
-      background: svg-load(tick.svg, fill: $default-color) no-repeat center;
+      background-image: svg-load(tick.svg, fill: $default-color);
       background-size: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-
-    &[disabled] {
-      color: rgba($default-text-color, .6);
-      background-color: color($input-bg blend($default-color 8%));
-      cursor: not-allowed;
-    }
-
   }
 }

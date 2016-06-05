@@ -4,33 +4,28 @@ import compose from 'recompose/compose';
 import defaultProps from 'recompose/defaultProps';
 import withPropsOnChange from 'recompose/withPropsOnChange';
 import pure from 'recompose/pure';
+import formControlHOC from 'HOCs/formControl';
 import scss from './Checkbox.scss';
 
 const { // {{{
-  string,
-  object,
-  oneOf,
-  oneOfType,
   bool,
-  array,
-  element,
-  func,
+  oneOf,
 } = PropTypes; // }}}
 
 /*
  * Checkbox component
  */
 export const checkbox = ({ // {{{
+  // Disabled eslint react/prop-types because validate in formControlHOC
+  /* eslint-disable react/prop-types */
   label,
   error,
   wrapperClassName,
   wrapperStyle,
+  /* eslint-enable react/prop-types */
   ...props,
 }) =>
-  <div
-    style={wrapperStyle}
-    className={[scss.checkbox__wrap, wrapperClassName].join(' ').trim()}
-  >
+  <div style={wrapperStyle} className={wrapperClassName}>
     <input type="checkbox" {...props} value />
     {label}
     {error}
@@ -38,160 +33,62 @@ export const checkbox = ({ // {{{
 ; // }}}
 
 checkbox.propTypes = { // {{{
-  //
-  // TODO
-  // labelPosition: oneOf([
-  //   'left',
-  //   'right',
-  //   'top',
-  //   'bottom',
-  // ]),
-
-  label: oneOfType([
-    string,
-    array,
-    element,
+  labelPosition: oneOf([
+    'left',
+    'right',
+    'top',
+    'bottom',
   ]),
-
-
-  // TODO
-  // help: string,
-
-  required: bool,
-
-  disabled: bool,
-
-  focus: bool,
-
-  // Css class for control
-  className: string,
-
-  // Css class for label
-  labelClassName: string,
-
-  // Css class for wrapper
-  wrapperClassName: string,
-
-  // Style for control
-  style: object,
-
-  // Style for label
-  labelStyle: object,
-
-  // Style for wrapper
-  wrapperStyle: object,
-
-  error: string,
-
   checked: bool,
-
-  size: oneOf([ // {{{
-    's',
-    'm',
-    'l',
-  ]), // }}}
-
-  // TODO
-  // process: oneOf([
-  //   false,
-  //   'progress',
-  //   'success',
-  //   'error',
-  // ]),
-
-  onChange: func,
-
-  onFocus: func,
 }; // }}}
 
 export const checkboxHOC = compose( // {{{
   defaultProps({ // {{{
     labelPosition: 'left',
-    required: false,
-    disabled: false,
-    focus: false,
     checked: false,
-    size: 'm',
-    process: false,
   }), // }}}
-
-  // id
-  withPropsOnChange( // {{{
-    ['id'], ({ id }) => {
-      const calcId = id || [
-        'checkbox',
-        +(new Date),
-        (new Date).getMilliseconds(),
-        Math.random().toString(36).substring(22),
-      ].join('');
-
-      return {
-        id: calcId,
-      };
-    },
-  ), // }}}
 
   // className
   withPropsOnChange( // {{{
     [
-      'className', 'size', 'error',
+      'className', 'size',
     ],
     ({
-      className, size, error,
+      className, size,
     }) => {
       const cx = classNames.bind(scss);
 
       return {
         className: cx({
           checkbox: true,
-          [`checkbox_size_${size}`]: !!size && size !== 'm',
-          checkbox_error: !!error,
-
+          [`checkbox_${size}`]: !!size && size !== 'm',
           [className]: !!className,
         }),
       };
     },
   ), // }}}
 
-  // label
+  // labelClassName
   withPropsOnChange( // {{{
     [
-      'id', 'label', 'required', 'labelClassName', 'labelStyle',
+      'labelClassName', 'size',
     ],
     ({
-      id, label, required, labelClassName, labelStyle,
+      labelClassName, size,
     }) => {
-      if (!!!label) return { label: null };
-
-      const reqBadge = required
-        ? <span className={scss.checkbox__badgeRequired}>*</span>
-        : null;
-
-      const labelComponent = (
-        <label
-          className={[scss.checkbox__label, labelClassName].join(' ').trim()}
-          htmlFor={id} style={labelStyle}
-        >
-          {label}{reqBadge}
-        </label>
-      );
+      const cx = classNames.bind(scss);
 
       return {
-        label: labelComponent,
+        labelClassName: cx({
+          checkbox__label: true,
+          [`checkbox__label_${size}`]: !!size && size !== 'm',
+          [labelClassName]: !!labelClassName,
+        }),
       };
     },
   ), // }}}
 
-  // error
-  withPropsOnChange( // {{{
-    ['error'], ({ error }) => {
-      if (!!!error) return { error: null };
-
-      return {
-        error: <span className={scss.checkbox__error}>{error}</span>,
-      };
-    },
-  ), // }}}
+  formControlHOC,
 
   pure,
 ); // }}}

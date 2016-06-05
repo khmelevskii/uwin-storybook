@@ -1,4 +1,11 @@
+/* Fonts {{{ */
+$font: 'Open Sans',Helvetica,Arial,sans-serif;
+/* }}} */
+
+/* Colors {{{ */
 $default-text-color: #6c757e;
+$invert-text-color: #fff;
+$dark-text-color: #64605F;
 
 $default-color: #8a949f;
 $primary-color: #27aae1;
@@ -7,35 +14,41 @@ $info-color: #ff9434;
 $warning-color: #9b7dcf;
 $danger-color: #f23869;
 
-$base-invert-color: #fff;
+$link-color: $primary-color;
+$link-visited-color: color($link-color lightness(+8));
+/* }}} */
 
+/* Sizes {{{ */
 $scale1: 8px;
 $scale2: 16px;
 $scale3: 24px;
 $scale4: 32px;
 $scale5: 40px;
+/* }}} */
 
-$button-xs: 26px;
-$button-s: 36px;
-$button-m: 42px;
-$button-l: 48px;
-$button-xl: 56px;
-$button-xxl: 64px;
-
-$font-family: 'Open Sans',Helvetica,Arial,sans-serif;
-
+/* Forms {{{ */
 $input-bg: #fff;
 $input-border: #dadce2;
+$input-color: #737373;
 $input-hover-border: color($input-border lightness(-8));
 $input-focus-border: $success-color;
 
+$input-readonly-bg: #ff9434;
+
+$form-control-xs-font-size: 11px;
+$form-control-s-font-size: 12px;
+$form-control-m-font-size: 14px;
+$form-control-l-font-size: 16px;
+$form-control-xl-font-size: 18px;
+$form-control-xxl-font-size: 20px;
+
+$form-control-xs: 26px;
+$form-control-s: 35px;
+$form-control-m: 42px;
+$form-control-l: 48px;
+$form-control-xl: 56px;
+$form-control-xxl: 64px;
+/* }}} */
+
 $fast-transition: .25s cubic-bezier(0.3, 1, 0.4, 1) 0s;
 $transition: .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;
-
-
-
-$base-color: #f00;
-
-$primary-text-color: #6c757e;
-
-
