@@ -1,0 +1,27 @@
+@import 'variables.scss';
+
+.select {
+  padding-right: 25px;
+
+  &:invalid {
+    color: rgba($default-text-color, .54);
+  }
+
+  &__wrap {
+    &:after {
+      content: ' ';
+      width: 10px;
+      height: 6px;
+      background: svg-load(drop.svg, fill: $default-color) no-repeat center;
+      background-size: 100%;
+      position: absolute;
+      display: block;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      pointer-events: none;
+      display: block;
+    }
+  }
+}
