@@ -5,7 +5,7 @@ import chaiEnzyme from 'chai-enzyme';
 import { mount } from 'enzyme';
 import Button from './Button';
 import scss from './Button.scss';
-import scssHint from '../../HOCs/hint/Hint.scss';
+import scssHint from '../../HOCs/hint/hint.scss';
 
 chai.use(chaiEnzyme());
 

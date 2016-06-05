@@ -2,8 +2,8 @@ import React from 'react';
 import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 import { mount } from 'enzyme';
-import HintHOC from './Hint';
-import scss from './Hint.scss';
+import hintHOC from './hint';
+import scss from './hint.scss';
 
 chai.use(chaiEnzyme());
 
@@ -13,7 +13,7 @@ describe('<Hint />', () => {
 
   beforeEach(() => {
     MockComponent = (props) => <div {...props} />;
-    WrapperComponent = HintHOC(MockComponent);
+    WrapperComponent = hintHOC(MockComponent);
   });
 
   it('should render', () => { // {{{

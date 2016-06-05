@@ -5,7 +5,7 @@ import setPropTypes from 'recompose/setPropTypes';
 import renameProps from 'recompose/renameProps';
 import withPropsOnChange from 'recompose/withPropsOnChange';
 import classNames from 'classnames/bind';
-import css from './Hint.scss';
+import scss from './hint.scss';
 
 const { // {{{
   oneOf,
@@ -65,7 +65,7 @@ export const hintHOC = compose( // {{{
   }), // }}}
 
   defaultProps({ // {{{
-    cssClasses: css,
+    cssClasses: scss,
     className: '',
     hintClassName: '',
     accent: 'default',

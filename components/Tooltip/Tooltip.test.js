@@ -4,7 +4,7 @@ import chaiEnzyme from 'chai-enzyme';
 import { mount } from 'enzyme';
 import Tooltip from './Tooltip';
 import { Link } from 'react-router';
-import scss from 'hint/Hint.scss';
+import scss from 'hint/hint.scss';
 
 chai.use(chaiEnzyme());
 
