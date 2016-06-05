@@ -10,7 +10,10 @@ storiesOf('Base container', module)
   )) // }}}
 
   .add('with margins', () => ( // {{{
-    <Base style={{ border: '1px solid' }} m={2}>Base container</Base>
+    <div>
+      <Base style={{ border: '1px solid' }} m={4}>Base container</Base>
+      <Base style={{ border: '1px solid' }}>Base container</Base>
+    </div>
   )) // }}}
 
   .add('with paddings', () => ( // {{{
